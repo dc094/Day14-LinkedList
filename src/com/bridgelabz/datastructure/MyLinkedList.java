@@ -1,17 +1,36 @@
 package com.bridgelabz.datastructure;
 
-import java.util.LinkedList;
-
 public class MyLinkedList {
+    INode head;
+    INode tail;
 
-    public static void main(String[] args) {
+    public MyLinkedList() {
+        this.head = null;
+        this.tail = null;
+    }
 
-        LinkedList<Integer> linkedList = new LinkedList<>();
+    public void add(INode newNode) {
+        if (this.head == null)
+            this.head = newNode;
+        if (this.tail == null)
+            this.tail = newNode;
+        else {
+            INode tempNode = this.head;
+            this.head = newNode;
+            this.head.setNext(tempNode);
+        }
+    }
 
-        linkedList.addFirst(56);
-        linkedList.add(30);
-        linkedList.addLast(70);
+    public void printMyNodes() {
 
-        System.out.println(linkedList.get(0) + " -> " + linkedList.get(1) + " -> " + linkedList.get(2));
+        StringBuffer myNodes = new StringBuffer("My Nodes: ");
+        INode tempNode = head;
+        while (tempNode.getNext() != null) {
+            myNodes.append(tempNode.getKey());
+            if (!tempNode.equals(tail)) myNodes.append("->");
+            tempNode = tempNode.getNext();
+        }
+        myNodes.append(tempNode.getKey());
+        System.out.println(myNodes);
     }
 }
