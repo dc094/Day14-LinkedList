@@ -2,6 +2,7 @@ package com.bridgelabz.datastructure;
 
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class MyLinkedListTest {
@@ -144,5 +145,19 @@ public class MyLinkedListTest {
                 mylinkedlist.head.getNext().equals(mySecondNode) &&
                 mylinkedlist.tail.equals(myThirdNode);
         assertTrue(result);
+    }
+
+    @Test
+    public void given_ShouldReturn() {
+        System.out.println("Test Case 10 : Ability to create ordered linked list in ascending order");
+        OrderedLinkedList<Integer> linkedList = new OrderedLinkedList<>();
+        linkedList.add(56);
+        linkedList.add(30);
+        linkedList.add(70);
+        linkedList.add(40);
+        linkedList.printMyNodes();
+        int head =linkedList.head.data;
+        assertEquals(30, head);
+
     }
 }
