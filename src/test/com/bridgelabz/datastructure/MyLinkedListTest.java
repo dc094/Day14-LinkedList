@@ -73,4 +73,21 @@ public class MyLinkedListTest {
                 mylinkedlist.head.getNext().equals(myThirdNode);
         assertTrue(result);
     }
+
+    @Test
+    public void given3NumberWhenAppendedToLinkedList_LastNumberShouldBeDeleted() {
+        System.out.println("Test Case 6 : Ability to delete last element");
+        MyNode<Integer> myFirstNode = new MyNode<>(56);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(70);
+        MyLinkedList mylinkedlist = new MyLinkedList();
+        mylinkedlist.add(myFirstNode);
+        mylinkedlist.append(myThirdNode);
+        mylinkedlist.Insert(myFirstNode, mySecondNode);
+        mylinkedlist.popLast();
+        mylinkedlist.printMyNodes();
+        boolean result =  mylinkedlist.head.equals(myFirstNode) &&
+                mylinkedlist.head.getNext().equals(mySecondNode);
+        assertTrue(result);
+    }
 }
