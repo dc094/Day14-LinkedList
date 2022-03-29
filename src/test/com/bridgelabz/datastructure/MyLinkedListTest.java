@@ -90,4 +90,20 @@ public class MyLinkedListTest {
                 mylinkedlist.head.getNext().equals(mySecondNode);
         assertTrue(result);
     }
+
+    @Test
+    public void given3NumberWhenAppendedToLinkedList_ShouldSearch30() {
+        System.out.println("Test Case 7 : Ability to search 30 in linked list");
+        MyNode<Integer> myFirstNode = new MyNode<>(56);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(70);
+        MyLinkedList mylinkedlist = new MyLinkedList();
+        mylinkedlist.add(myFirstNode);
+        mylinkedlist.append(myThirdNode);
+        mylinkedlist.Insert(myFirstNode, mySecondNode);
+        mylinkedlist.printMyNodes();
+        boolean result = mylinkedlist.search(mySecondNode);
+        mylinkedlist.search(myThirdNode);
+        assertTrue(result);
+    }
 }
