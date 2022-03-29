@@ -76,6 +76,28 @@ public class MyLinkedList {
         }
     }
 
+    public void searchAndDelete(INode deleteNode) {
+        MyLinkedList n = new MyLinkedList();
+        INode tempNode = head;
+        boolean inserted = false;
+        while (tempNode.getNext() != null) {
+            if (tempNode.getKey() == deleteNode.getKey()) {
+                n.pop();
+            }
+            tempNode = tempNode.getNext();
+        }
+    }
+
+    public int size() {
+        INode tempNode = head;
+        int count = 1;
+        while (tempNode.getNext() != null) {
+            count++;
+            tempNode = tempNode.getNext();
+        }
+        return count;
+    }
+
     public void printMyNodes() {
         StringBuffer myNodes = new StringBuffer("My Nodes: ");
         INode tempNode = head;
