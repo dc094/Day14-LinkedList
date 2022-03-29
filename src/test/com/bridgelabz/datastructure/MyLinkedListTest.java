@@ -106,4 +106,23 @@ public class MyLinkedListTest {
         mylinkedlist.search(myThirdNode);
         assertTrue(result);
     }
+
+    @Test
+    public void givenSearch30InLinkedList_ShouldBeInserted40After30() {
+        System.out.println("Test Case 8 : Ability to insert 40 after 30");
+        MyNode<Integer> myFirstNode = new MyNode<>(56);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(70);
+        MyNode<Integer> myFourthNode = new MyNode<>(40);
+        MyLinkedList mylinkedlist = new MyLinkedList();
+        mylinkedlist.add(myFirstNode);
+        mylinkedlist.append(myThirdNode);
+        mylinkedlist.Insert(myFirstNode, mySecondNode);
+        mylinkedlist.searchAndInsert(mySecondNode, myFourthNode);
+        mylinkedlist.printMyNodes();
+        boolean result = mylinkedlist.head.equals(myFirstNode) &&
+                mylinkedlist.head.getNext().equals(mySecondNode) &&
+                mylinkedlist.tail.equals(myThirdNode);
+        assertTrue(result);
+    }
 }
