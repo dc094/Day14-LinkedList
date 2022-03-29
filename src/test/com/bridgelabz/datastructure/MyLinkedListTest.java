@@ -39,4 +39,22 @@ public class MyLinkedListTest {
                 mylinkedlist.tail.equals(myThirdNode);
         assertTrue(result);
     }
+
+    @Test
+    public void given3NumberWhenAppendedToLinkedList_OneNumberShouldBeInsertedInMiddle() {
+        System.out.println("Test Case 4 : Ability to insert 30 between 56 and 70");
+        MyNode<Integer> myFirstNode = new MyNode<>(56);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(70);
+        MyLinkedList mylinkedlist = new MyLinkedList();
+        mylinkedlist.add(myFirstNode);
+        mylinkedlist.append(myThirdNode);
+        mylinkedlist.Insert(myFirstNode, mySecondNode);
+        mylinkedlist.printMyNodes();
+        boolean result =  mylinkedlist.head.equals(myFirstNode) &&
+                mylinkedlist.head.getNext().equals(mySecondNode) &&
+                mylinkedlist.tail.equals(myThirdNode);
+        assertTrue(result);
+    }
+
 }
